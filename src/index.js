@@ -40,9 +40,7 @@ function doCountriesListMarkup(countries) {
     .map(
       ({ flags, name }) => `<li class="country-item">
     <img class="flag-img" src="${flags.svg}" alt="${name.official} flag" width="50" height="33"/>
-    <p class="country-name" >${name.official}</p></li>`
-    )
-    .join('');
+    <p class="country-name" >${name.official}</p></li>`).join('');
   addListOfCountries(markup);
 }
 function doCountryInfoMarkup(countries) {
