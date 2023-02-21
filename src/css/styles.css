@@ -10,11 +10,78 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  background-image: url(../img/BG1.jpg);
+  background-repeat: repeat;
+}
+
+.asc {
+  margin: 0 auto;
+  max-width: 420px;
+  font-size: 24px;
+  text-align: center;
+  background-color:  rgba(250, 250, 250, .8);
+  border-radius: 10px;
+  color: #212121;
 }
 
 #search-box {
+  display: block;
   font: inherit;
   padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+  max-width: 420px;
+  min-width: 320px;
+  margin: 25px auto 0 auto;
+  font-size: 16px;
+  border: #BEB4D6 solid 2px;
+  border-radius: 8px;
+}
+.country-list {
+  margin: 0 auto;
+  padding-left: 15px;
+  list-style: none;
+  background-color:  rgba(250, 250, 250, .8);
+  max-width: fit-content;
+}
+.country-item {
+  display: flex;
+  align-items: center;
+}
+
+.country-name {
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.country-info p {
+  font-size: 20px;
+}
+
+.flag-img {
+  margin-right: 15px;
+}
+.country-info {
+  margin: 0 auto;
+  list-style: none;
+  background-color:  rgba(250, 250, 250, .8);
+  max-width: fit-content;
+}
+
+.country-info p {
+  padding: 0 10px 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 0;
+}
+
+.name-country {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+.info {
+  font-size: 20px;
+  font-weight: bold;
 }
