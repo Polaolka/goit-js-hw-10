@@ -4,15 +4,6 @@ import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const DEBOUNCE_DELAY = 1000;
-const URL = `https://restcountries.com/v3.1/name/`;
-const settingsSearchArr = [
-  'name',
-  'capital',
-  'population',
-  'flags',
-  'languages',
-];
-
 
 const fetchCountriesInput = document.querySelector('#search-box');
 const countryListEl = document.querySelector('.country-list');
@@ -26,9 +17,9 @@ fetchCountriesInput.addEventListener(
 function handleInputEvent(e) {
   removeCountriesList();
   removeCountryInfo();
-  let searchQuery = e.target.value.trim();
-  if (!searchQuery.length) return;
-  fetchCountries(URL + searchQuery + "?fields=" + settingsSearchArr.join(','))
+  let countryName = fetchCountriesInput.value.trim();
+  if (countryName)
+  fetchCountries(countryName)
     .then(handleResponse)
     .catch(error =>
       Notify.failure(`Oops, there is no country with that name! (${error})`)
@@ -84,7 +75,7 @@ function handleResponse(countries) {
       'Too many matches found. Please enter a more specific name.'
     );
   }
-  if (countries.length > 2 && countries.length < 10) {
+  if (countries.length >= 2 && countries.length <= 10) {
     doCountriesListMarkup(countries);
   }
   if (countries.length === 1) {
